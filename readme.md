@@ -1,10 +1,12 @@
-Try the app! [URL](https://mysterious-beach-25679.herokuapp.com/) test test
+Try the app! https://jeopardychampions.herokuapp.com/
 
 # Jeopardy
 This is a Single Page Application (SPA) where everything is put into a single page. We recreated a digital version of the popular TV show jeopardy. This app is a way to play the quiz online no matter where you are.
 
+![homepage](https://imgur.com/rlNaAaE.png)
+
 ## Our plan / Approach
-We use express as our framework along with javascript,html, CSS as our styling, PSQL as our database and deployed our app to heroku. Axios to call to Jeopardy API.
+We use express as our framework along with Javascript,html, CSS as our styling, PSQL as our database and deployed our app to Heroku. Axios to call to Jeopardy API.
 
 ## Known Limitations
 - API will not let us choose a category
@@ -23,7 +25,7 @@ We use express as our framework along with javascript,html, CSS as our styling, 
 - A tally of current score for user
 
 ## Future features
-- record score into database
-- choose a category
+- Record score into database
+- Choose a category
 - Voice dictation of each question
-- display individual user percentage of correct answers
+- Display individual user percentage of correct answers
