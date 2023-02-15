@@ -4,9 +4,9 @@ const state = {
 //   userScore: 0,
   question: null
 }
-var audioIntro = new Audio('../../sounds/jeopardy-intro.mp3');
-var audioCorrect = new Audio('../../sounds/rightanswer.mp3');
-var audioInCorrect = new Audio('../../sounds/wronganswer.mp3');
+var audioIntro = new Audio('../sounds/jeopardy-intro.mp3');
+var audioCorrect = new Audio('../sounds/rightanswer.mp3');
+var audioInCorrect = new Audio('../sounds/wronganswer.mp3');
 
 initialSetting()
 
