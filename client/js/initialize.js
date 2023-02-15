@@ -51,6 +51,17 @@ function initialSetting() {
         renderHeaderNav()    
         renderQuizBoard()
     })
+    .catch(
+      () => {
+        
+          state.userId = null
+          state.userName = null
+          state.email = null
+          state.userScore = 0
+      renderHeaderNav()    
+      renderQuizBoard()
+      }
+    )
 }
 
 

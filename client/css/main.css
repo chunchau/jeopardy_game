@@ -1,6 +1,6 @@
 body {
   /* background-image: url("https://i.imgur.com/T4V3xu5.jpg"); */
-  background: url("https://i.imgur.com/T4V3xu5.jpg") no-repeat center center
+  background: url("/assets/wallpaper.jpg") no-repeat center center
     fixed;
   background-size: cover;
 }
