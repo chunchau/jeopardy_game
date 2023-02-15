@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+.user {
+  position: relative;
+  /* border: 1px solid black; */
+  /* box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.2); */
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #064789;
+  border-radius: 20px;
+  padding: 0 30px;
+  margin: 5vh auto;
+  max-width: 400px;
+  /* height: 470px; */
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+label {
+  font-family: "Roboto Serif", serif;
+}
+
+.user fieldset {
+  border: 0;
+}
+
+.user h2 {
+  font-size: 1.8rem;
+}
+
+.user label {
+  font-size: 1.2rem;
+  margin: 0;
+  color: antiquewhite;
+}
+
+.user input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.user button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  font-style: bold;
+  color: white;
+  background-color: #449dd1;
+  border: 2px solid #f5bb00;
+  border-radius: 30px;
+}
+
+.user button {
+  cursor: pointer;
+}
+
+.user .error {
+  color: #ff5964;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.user .user-form-footer {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+button {
+  font-family: "Roboto Serif", serif;
+}
+
+a:link {
+  color: wheat;
+}
+
+a:visited {
+  color: #449dd1;
+}
+
+a:hover {
+  color: #ff5964;
+}
+
+.login-success img {
+  width: 100px;
+  margin-top: 10vh;
+}
+
+.success {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+.success span {
+  font-size: 3rem;
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+    /* transform: rotateX(90deg); */
+  }
+  50% {
+    opacity: 0.5;
+    /* transform: rotateX(0deg); */
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    /* transform: rotateX(90deg); */
+  }
+}
+.disappear {
+  animation-name: myAnimation;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+}
