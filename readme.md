@@ -1,4 +1,7 @@
-Try the app! https://jeopardychampions.herokuapp.com/
+Try the app! https://itsericchau.github.io/jeopardy-champions/
+
+# Currently login and statstic features unavailiable as database is not hosted.
+- Questions are still working just no logs.
 
 # Jeopardy
 This is a Single Page Application (SPA) where everything is put into a single page. We recreated a digital version of the popular TV show jeopardy. This app is a way to play the quiz online no matter where you are.
