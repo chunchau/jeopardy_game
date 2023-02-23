@@ -1,6 +1,6 @@
 Try the app! https://itsericchau.github.io/jeopardy-champions/
 
-# Currently login and statstic features unavailiable as database is not hosted.
+# Currently login and statstic features unavailable as database is not hosted.
 - Questions are still working just no logs.
 
 # Jeopardy
