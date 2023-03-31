@@ -1,22 +1,26 @@
 const state = {
-//   userId: null,
-//   userName: null,
-//   userScore: 0,
-  question: null
+  //   userId: null,
+  //   userName: null,
+  //   userScore: 0,
+  question: null,
 }
-var audioIntro = new Audio('sounds/jeopardy-intro.mp3');
-var audioCorrect = new Audio('sounds/rightanswer.mp3');
-var audioInCorrect = new Audio('sounds/wronganswer.mp3');
+var audioIntro = new Audio("sounds/jeopardy-intro.mp3")
+var audioCorrect = new Audio("sounds/rightanswer.mp3")
+var audioInCorrect = new Audio("sounds/wronganswer.mp3")
 
 initialSetting()
 
 function getQuestion(value = null) {
-//   document.querySelector('.welcome').style.display = 'none'
-    document.querySelector('.welcome').innerHTML = `Current Score: $${state.userScore}`
+  //   document.querySelector('.welcome').style.display = 'none'
+  document.querySelector(
+    ".welcome"
+  ).innerHTML = `Current Score: $${state.userScore}`
   if (value) {
-    axios.get(`https://jservice.io/api/clues?value=${value}`)
-      .then(res => res.data)
-      .then(question => {
+    renderQuizQuestion()
+    axios
+      .get(`https://jservice.io/api/clues?value=${value}`)
+      .then((res) => res.data)
+      .then((question) => {
         state.question = question[Math.floor(Math.random() * question.length)]
         renderQuizQuestion()
       })
@@ -33,47 +37,44 @@ function getQuestion(value = null) {
 function initialSetting() {
   state.userScore = 0
   state.question = null
-  
-  axios.get('/api/sessions')
-    .then(res => res.data )
-    .then( user => {
-        if(user.user_info) {
-            state.userId = user.user_info.userId
-            state.userName = user.user_info.userName
-            state.email = user.user_info.email
-            state.userScore = 0
-        } else {
-            state.userId = null
-            state.userName = null
-            state.email = null
-            state.userScore = 0
-        }
-        renderHeaderNav()    
-        renderQuizBoard()
-    })
-    .catch(
-      () => {
-        
-          state.userId = null
-          state.userName = null
-          state.email = null
-          state.userScore = 0
-      renderHeaderNav()    
-      renderQuizBoard()
-      }
-    )
-}
 
+  axios
+    .get("/api/sessions")
+    .then((res) => res.data)
+    .then((user) => {
+      if (user.user_info) {
+        state.userId = user.user_info.userId
+        state.userName = user.user_info.userName
+        state.email = user.user_info.email
+        state.userScore = 0
+      } else {
+        state.userId = null
+        state.userName = null
+        state.email = null
+        state.userScore = 0
+      }
+      renderHeaderNav()
+      renderQuizBoard()
+    })
+    .catch(() => {
+      state.userId = null
+      state.userName = null
+      state.email = null
+      state.userScore = 0
+      renderHeaderNav()
+      renderQuizBoard()
+    })
+}
 
 function playMusic() {
   if (audioIntro.paused) {
-    audioIntro.play();
+    audioIntro.play()
   } else {
-    audioIntro.pause();
+    audioIntro.pause()
   }
 }
 
 // sleep time expects milliseconds
 function sleep(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
+  return new Promise((resolve) => setTimeout(resolve, time))
 }
