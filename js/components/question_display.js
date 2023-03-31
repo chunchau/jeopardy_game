@@ -29,7 +29,7 @@ function checkUsername(username) {
 function renderQuizQuestion() {
   if (!state.question.value) {
     document.querySelector(
-      "#page .create-question"
+      "#page"
     ).innerHTML = ` <h2>Loading... </h2>`
   } else {
     document.querySelector("#page .create-question").innerHTML = `
