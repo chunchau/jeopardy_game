@@ -27,7 +27,11 @@ function checkUsername(username) {
 }
 
 function renderQuizQuestion() {
-  if (state.question.value) {
+  if (!state.question.value) {
+    document.querySelector(
+      "#page .create-question"
+    ).innerHTML = ` <h2>Loading... </h2>`
+  } else {
     document.querySelector("#page .create-question").innerHTML = `
     
 
@@ -64,8 +68,6 @@ function renderQuizQuestion() {
       <section class="user-answer hide"> </section>
     
     `
-  } else {
-    document.querySelector("#page .create-question").innerHTML = ` <h2>Loading... </h2>`
   }
 }
 
