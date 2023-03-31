@@ -1,8 +1,7 @@
 function renderQuizBoard() {
   const username = checkUsername(state.userName)
 
-  document.querySelector('#page').innerHTML =
-    `
+  document.querySelector("#page").innerHTML = `
     <h2 class="welcome">Welcome ${username}! Select a difficulty below</h2>
     <section class="question-board">
     <div onClick=getQuestion(100)>$100</div>
@@ -19,17 +18,23 @@ function renderQuizBoard() {
   `
 }
 
-
 function checkUsername(username) {
   if (username) {
     return username
   } else {
-    return 'Guest'
+    return "Guest"
   }
 }
 
 function renderQuizQuestion() {
-  document.querySelector('#page .create-question').innerHTML = `
+  if (!state.question.value) {
+    document.querySelector(
+      ".create-question"
+    ).innerHTML = ` <section class="loading">
+    <h2>Loading... </h2>
+    </section>`
+  } else {
+    document.querySelector("#page .create-question").innerHTML = `
     
 
         <form onSubmit="grabQuestion(event)" class='question-form'>
@@ -51,8 +56,13 @@ function renderQuizQuestion() {
           </section>
             <h2>Question</h2>            
             <p id="question">${state.question.question}</p>
-            <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
-            <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
+            <input type="hidden" name="question" value="${state.question.question.replaceAll(
+              '"',
+              "'"
+            )}">
+            <input type="hidden" name="question_answer" class="question_answer" value="${
+              state.question.answer
+            }">
             <input name="user_input" class="user_input" placeholder="type your answer here..."></input><br>
             <button class="answer-btn">Submit</button>
             
@@ -60,12 +70,13 @@ function renderQuizQuestion() {
       <section class="user-answer hide"> </section>
     
     `
+  }
 }
 
 function grabQuestion(event) {
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
-  document.querySelector('.question-form').style.display = 'none'
+  document.querySelector(".question-form").style.display = "none"
   checkUserAnswer(data.user_input)
 }
