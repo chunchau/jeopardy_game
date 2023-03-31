@@ -65,7 +65,7 @@ function renderQuizQuestion() {
     
     `
   } else {
-    
+    document.querySelector("#page .create-question").innerHTML = ` <h2>Loading... </h2>`
   }
 }
 
