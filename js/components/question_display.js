@@ -27,7 +27,7 @@ function checkUsername(username) {
 }
 
 function renderQuizQuestion() {
-  if (!state.question.value) {
+  if (state.question.value) {
     document.querySelector("#page .create-question").innerHTML = `
     
 
